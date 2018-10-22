@@ -12,7 +12,7 @@ class SQLOperate():
             ) 
         cursor = conn.cursor()
         # 使用 execute()  方法执行 SQL 查询
-        cursor.execute("SELECT loginname from `user` WHERE username = '"+name+"'")
+        cursor.execute("SELECT loginname from `user` WHERE username like '"+name+"%'")
  
         # 使用 fetchone() 方法获取单条数据.
         data = "".join(cursor.fetchone())
@@ -23,5 +23,5 @@ class SQLOperate():
 
 if __name__ == "__main__":
     mission = SQLOperate()
-    print(mission.GetLoginname( '闵银花' ))
+    print(mission.GetLoginname( '闵银' ))
 
