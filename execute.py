@@ -42,6 +42,7 @@ class WorkFlowOperate():
         driver.find_element_by_id('conMyApply_lvData_lbStartTime').click()
         driver.find_element_by_id('conMyApply_lvData_hlProcTitle_0').click()
         driver.switch_to_window(driver.window_handles[1])
+        driver.maximize_window()#最大化页面
 
     def Start_FlowSheet(self, driver, FlowType):
         driver.find_element_by_link_text('发起流程').click()

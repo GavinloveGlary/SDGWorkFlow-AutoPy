@@ -23,5 +23,5 @@ class SQLOperate():
 
 if __name__ == "__main__":
     mission = SQLOperate()
-    print(mission.GetLoginname( '闵银' ))
+    print(mission.GetLoginname( '尤' ))
 
