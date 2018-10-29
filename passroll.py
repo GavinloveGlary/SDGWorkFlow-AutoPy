@@ -12,20 +12,21 @@ class Passroll():
         action.Log_newuser(driver, url, user)
         action.Into_FlowSheet(driver, flow)
         flowList = ID.Get_Chain(driver)
+        flowID = ID.Get_FlowID(driver)
         action.Log_out(driver)
         T.sleep(10)
 
         for i in range(len(flowList)):
             driver = webdriver.Ie()
             action.Log_newuser(driver, url, flowList[i])
-            action.Into_FlowSheet(driver, flow)
+            action.Into_FlowSheet(driver, flowID)
             action.Sheet_Operate(driver, "Pass")
             action.Log_out(driver)
             T.sleep(10)
 
 if __name__ == "__main__":
-    user = "huangchao05"
-    flow = "GMSWBRWD18000142"
+    user = "zhaoruntong.falcon"
+    flow = "#~Script-Serve正式任务"
     url = 'http://10.246.190.50:9554/Sso.do/?GSubSystemCode=&SubSy\
 stemCode=1134&EntranceCode=16&RType=1&ReturnUrl=http%3a%2f%2f192\
 .168.100.150%2fSDG.Workflow.Platform%2fLogin.aspx'
@@ -33,5 +34,4 @@ stemCode=1134&EntranceCode=16&RType=1&ReturnUrl=http%3a%2f%2f192\
     driver = webdriver.Ie()
     mission = Passroll()
     mission.passoperate(driver, url, user, flow)
-
 
