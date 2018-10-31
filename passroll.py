@@ -11,8 +11,8 @@ class Passroll():
         ID = ls.ChainOperate()
         action.Log_newuser(driver, url, user)
         action.Into_FlowSheet(driver, flow)
-        flowList = ID.Get_Chain(driver)
         flowID = ID.Get_FlowID(driver)
+        flowList = ID.Get_Chain(driver)
         action.Log_out(driver)
         T.sleep(10)
 
@@ -26,7 +26,7 @@ class Passroll():
 
 if __name__ == "__main__":
     user = "zhaoruntong.falcon"
-    flow = "#~Script-Serve正式任务"
+    flow = "#~Script-Serve正式任务 34.21元 付款日:2018-10-31"
     url = 'http://10.246.190.50:9554/Sso.do/?GSubSystemCode=&SubSy\
 stemCode=1134&EntranceCode=16&RType=1&ReturnUrl=http%3a%2f%2f192\
 .168.100.150%2fSDG.Workflow.Platform%2fLogin.aspx'
